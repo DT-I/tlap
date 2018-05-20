@@ -10,6 +10,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   # GET /questionnaires/1.json
   def show
+    @questions = @questionnaire.questions
   end
 
   # GET /questionnaires/new

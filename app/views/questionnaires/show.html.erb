@@ -5,11 +5,14 @@
   <%= @questionnaire.QuestionnaireName %>
 </p>
 
-<% if @questionnaire.QuestionnaireSlug%>
-<p>
-  <strong>Slug:</strong>
-  <%= @questionnaire.QuestionnaireSlug %>
-</p>
+<% @questions.each do |question| %>
+  <h3><%= question.question_text %></h3>
+  <% responses = question.child_questions %>
+  <% responses.each do |response| %>
+  <%= response.question_text %>
+    <%= radio_button_tag(:response, response.question_text) %>
+  <% end %>
 <% end %>
+
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
 <%= link_to 'Back', questionnaires_path %>
