@@ -22,14 +22,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :affirmative_Resource %>
+    <%= form.label :resource %>
     <%= form.collection_select :affirmative_resource_id, Resource.all, :id, :name, include_blank: true %>
   </div>
+
   
-  <div class="field">
-    <%= form.label :negative_Resource %>
-    <%= form.collection_select :negative_resource_id, Resource.all, :id, :name, include_blank: true %>
-  </div>
+  <h3>Responses</h3>
+  <%= form.fields_for :child_questions do |child_question| %>
+    <%= render 'question_fields', f: child_question %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Question", form, :child_questions %>
 
   <div class="actions">
     <%= form.submit %>

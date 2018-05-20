@@ -70,6 +70,7 @@ class QuestionnairesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
-      params.require(:questionnaire).permit(:QuestionnaireName, :QuestionnaireSlug, :resource_category_id, questions_attributes: [:id, :question_text, :question_type_id, :affirmative_resource_id, :negative_resource_id, :_destroy])
+      params.require(:questionnaire)
+      .permit(:QuestionnaireName, :QuestionnaireSlug, :resource_category_id, questions_attributes: [:id, :question_text, :question_type_id, :affirmative_resource_id, :negative_resource_id, :_destroy, child_questions_attributes: [:id, :question_text, :question_type_id, :affirmative_resource_id, :_destroy]])
     end
 end

@@ -8,16 +8,11 @@
       <%= f.label :question_type %>
       <%= f.collection_select(:question_type_id, QuestionType.all, :id, :question_type_name) %>
     </div>
+    
     <div class="field">
       <%= f.label :resource %>
       <%= f.collection_select :affirmative_resource_id, Resource.all, :id, :name, include_blank: true %>
     </div>
-
-    <h3>Responses</h3>
-    <%= f.fields_for :child_questions do |child_question| %>
-      <%= render 'question_fields', f: child_question %>
-    <% end %>
-     <%= link_to_add_fields "Add Response", f, :child_questions %> 
 
       <%= f.hidden_field :_destroy %>
       <%= link_to "remove", '#', class: "remove_fields" %>

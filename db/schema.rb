@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_20_062410) do
+ActiveRecord::Schema.define(version: 2018_05_20_150249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "question_options", force: :cascade do |t|
+    t.string "display_text"
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id"
+  end
 
   create_table "question_types", force: :cascade do |t|
     t.string "question_type_name"
@@ -40,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_05_20_062410) do
     t.integer "affirmative_resource_id"
     t.integer "negative_resource_id"
     t.bigint "questionnaire_id"
+    t.integer "parent_question_id"
     t.index ["question_type_id"], name: "index_questions_on_question_type_id"
     t.index ["questionnaire_id"], name: "index_questions_on_questionnaire_id"
   end
