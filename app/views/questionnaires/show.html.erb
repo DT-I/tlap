@@ -9,17 +9,38 @@
   <h3><%= question.question_text %></h3>
   <% responses = question.child_questions %>
   <% responses.each do |response| %>
-    <%= response.question_text %> <%= radio_button_tag(:response, response.question_text) %>
+    <%= response.question_text %><input type="radio" name="response" id="response_<%= response.question_text%>" value="<%= response.question_text%>" checked="checked" data-category="<%= @questionnaire.resource_category_id %>" data-resource="<%= response.affirmative_resource_id %>" >
+
     <% if response.affirmative_resource_id %>
       <% resource = Resource.find_by_id(response.affirmative_resource_id) %>
-      <div class="resource-paragraph">
-      <%= resource.name %>
-      <%= resource.url %>
-      <%= resource.description %>
+      <div class="category-<%= @questionnaire.resource_category_id %> resource-<%= response.affirmative_resource_id%> resource-paragraph" style="display: none;" resource-json="<%= resource.to_json %>">
+        <%= resource.name %>
+        <%= resource.url %>
+        <%= resource.description %>
       </div>
     <% end %>
   <% end %>
 <% end %>
-
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
 <%= link_to 'Back', questionnaires_path %>
+
+<script>
+$(document).ready(function() {
+  $(':radio').change(function (event) {
+      console.log(this)
+      var resource = $(this).data('resource');
+      var category = $(this).data('category');
+      console.log(resource);
+      console.log(".category-" + category);
+      console.log(".resource-" + resource);
+      $(".category-" + category).hide();
+      $(".resource-" + resource).show();
+      // if ($(".resource-" + resource).length > 0) {
+      //   console.log()
+      //   var json_string = $(".resource-" + resource).first().attr(json)
+      //   var json = JSON.stringify(json_string)
+      //   localStorage.resource = json
+      // }
+  });
+});
+</script>
