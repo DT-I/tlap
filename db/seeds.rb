@@ -31,7 +31,7 @@ Resource.create!([
 Question.create!([
   {question_text: "Test Question", question_answer: nil, question_type_id: 1, affirmative_resource_id: nil, negative_resource_id: 2, questionnaire_id: nil, parent_question_id: nil},
   {question_text: "Do you have children?", question_answer: nil, question_type_id: 1, affirmative_resource_id: nil, negative_resource_id: nil, questionnaire_id: 2, parent_question_id: nil},
-  {question_text: "Yes, younger children", question_answer: nil, question_type_id: 2, affirmative_resource_id: 1, negative_resource_id: nil, questionnaire_id: nil, parent_question_id: 11},
+  {question_text: "Yes, younger children",question_answer: nil, question_type_id: 2, affirmative_resource_id: 1, negative_resource_id: nil, questionnaire_id: nil, parent_question_id: 11},
   {question_text: "Yes, older children", question_answer: nil, question_type_id: 1, affirmative_resource_id: 3, negative_resource_id: nil, questionnaire_id: nil, parent_question_id: 11},
   {question_text: "No", question_answer: nil, question_type_id: 1, affirmative_resource_id: nil, negative_resource_id: nil, questionnaire_id: nil, parent_question_id: 11},
   {question_text: "Do you have elders to care for?", question_answer: nil, question_type_id: 1, affirmative_resource_id: nil, negative_resource_id: nil, questionnaire_id: 2, parent_question_id: nil},
