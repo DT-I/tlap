@@ -44,7 +44,7 @@ h1 {
 
 .content-box {
     height: 600px;
-    background-image: url(login_bg.png);
+    background-image: url(image_path('login_bg'));
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
