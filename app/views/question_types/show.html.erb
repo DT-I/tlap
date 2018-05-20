@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question type name:</strong>
+  <%= @question_type.question_type_name %>
+</p>
+
+<p>
+  <strong>Question type slug:</strong>
+  <%= @question_type.question_type_slug %>
+</p>
+
+<%= link_to 'Edit', edit_question_type_path(@question_type) %> |
+<%= link_to 'Back', question_types_path %>
