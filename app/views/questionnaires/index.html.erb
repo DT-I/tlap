@@ -14,8 +14,8 @@
   <tbody>
     <% @questionnaires.each do |questionnaire| %>
       <tr>
-        <td><%= questionnaire.QuestionName %></td>
-        <td><%= questionnaire.QuestionSlug %></td>
+        <td><%= questionnaire.QuestionnaireName %></td>
+        <td><%= questionnaire.QuestionnaireSlug %></td>
         <td><%= link_to 'Show', questionnaire %></td>
         <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
         <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>

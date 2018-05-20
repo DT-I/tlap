@@ -1,3 +1,3 @@
 class Question < ApplicationRecord
-    has_a :question_type
+    has_one :question_type
 end
