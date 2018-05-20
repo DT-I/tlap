@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resource_categories
   resources :questions
   resources :question_types
   resources :questionnaires
