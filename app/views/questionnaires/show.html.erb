@@ -9,8 +9,15 @@
   <h3><%= question.question_text %></h3>
   <% responses = question.child_questions %>
   <% responses.each do |response| %>
-  <%= response.question_text %>
-    <%= radio_button_tag(:response, response.question_text) %>
+    <%= response.question_text %> <%= radio_button_tag(:response, response.question_text) %>
+    <% if response.affirmative_resource_id %>
+      <% resource = Resource.find_by_id(response.affirmative_resource_id) %>
+      <div class="resource-paragraph">
+      <%= resource.name %>
+      <%= resource.url %>
+      <%= resource.description %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 
