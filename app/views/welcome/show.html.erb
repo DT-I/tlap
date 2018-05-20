@@ -2,42 +2,12 @@
         <h1>Transition to Life After Prison</h1>
 
         <div class="content-box">
-            <div><img src="logo.png" /></div>
+            <div><%= image_tag 'Logo.png' %></div>
+        </div>
+        <div style="margin: 0 auto; width: 100px; border: 1px solid black; padding: 10px;">
+            <%= link_to "Begin...", questionnaires_path() %>
         </div>
 
-        <div class="btn">
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;background-color:slategrey;">Login</button>
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
-        </div>
-    </div>
-
-    <div id="id01" class="modal">
-
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <img src="http://rs1088.pbsrc.com/albums/i324/chishono/Short%20North%20Chiropractic/shortnorthchiropractic1.jpg?w=280&h=210&fit=crop" alt="tlap.jpg alt='Avatar'" class="avatar ">
-            </div>
-
-            <div class="container ">
-                <label for="uname "><b>Username</b></label>
-                <input type="text " placeholder="Enter Username " name="uname " required>
-
-                <label for="psw "><b>Password</b></label>
-                <input type="password " placeholder="Enter Password " name="psw " required>
-
-                <button type="submit ">Login</button>
-                <label>
-		        <input type="checkbox " checked="checked " name="remember "> Remember me
-		      </label>
-            </div>
-
-            <div class="container " style="background-color:#f1f1f1 ">
-                <button type="button " onclick="document.getElementById( 'id01').style.display='none' " class="cancelbtn ">Cancel</button>
-                <span class="psw ">Forgot <a href="# ">password?</a></span>
-            </div>
-        </form>
-    </div>
     </div>
 
     <div id="id02 " class="modal ">
