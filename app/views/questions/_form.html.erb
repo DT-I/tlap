@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :question_answer %>
-    <%= form.text_field :question_answer %>
+    <%= form.label :question_type %>
+    <%= form.collection_select(:question_type_id, QuestionType.all, :id, :question_type_name) %>
   </div>
 
   <div class="field">
-    <%= form.label :question_type %>
-    <%= form.text_field :question_type %>
+    <%= form.label :affirmative_Resource %>
+    <%= form.collection_select :affirmative_resource_id, Resource.all, :id, :name, include_blank: true %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :negative_Resource %>
+    <%= form.collection_select :negative_resource_id, Resource.all, :id, :name, include_blank: true %>
   </div>
 
   <div class="actions">

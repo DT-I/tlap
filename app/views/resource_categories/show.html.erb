@@ -4,10 +4,19 @@
   <strong>Name:</strong>
   <%= @resource_category.name %>
 </p>
-
+get
 <p>
   <strong>Slug:</strong>
   <%= @resource_category.slug %>
+</p>
+
+<p>
+  <strong>Resources:</strong>
+  <% @resources.each do |resource| %>
+    <h3><%= resource.name%></h3>
+    <h4><%= resource.url%></h4>
+    <p><%= resource.description%> </p>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_resource_category_path(@resource_category) %> |

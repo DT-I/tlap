@@ -1,3 +1,3 @@
 class Resource < ApplicationRecord
-    has_one :resource_category
+    belongs_to :resource_category
 end

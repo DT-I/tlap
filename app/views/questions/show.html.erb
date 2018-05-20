@@ -6,14 +6,27 @@
 </p>
 
 <p>
-  <strong>Question answer:</strong>
-  <%= @question.question_answer %>
+  <strong>Question type:</strong>
+  <%= @question.question_type.question_type_name %>
 </p>
 
+<% if @question.affirmative_resource_id %>
 <p>
-  <strong>Question type:</strong>
-  <%= @question.question_type %>
+  <strong>Affirmative Resource:</strong>
+  <% affirmative_resource = Resource.find_by_id(@question.affirmative_resource_id) %>
+  <%= affirmative_resource.name %>
+  <%= link_to affirmative_resource.name, affirmative_resource.url %>
 </p>
+<% end %>
+
+<% if @question.negative_resource_id %>
+<p>
+  <strong>Negative Resource:</strong>
+  <% negative_resource = Resource.find_by_id(@question.negative_resource_id) %>
+  <%= negative_resource.name %>
+  <%= link_to negative_resource.name, negative_resource.url %>
+</p>
+<% end %>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

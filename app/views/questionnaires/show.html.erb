@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Questionname:</strong>
-  <%= @questionnaire.QuestionName %>
+  <strong>Name:</strong>
+  <%= @questionnaire.QuestionnaireName %>
 </p>
 
+<% if @questionnaire.QuestionnaireSlug%>
 <p>
-  <strong>Questionslug:</strong>
-  <%= @questionnaire.QuestionSlug %>
+  <strong>Slug:</strong>
+  <%= @questionnaire.QuestionnaireSlug %>
 </p>
-
+<% end %>
 <%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
 <%= link_to 'Back', questionnaires_path %>

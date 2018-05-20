@@ -10,6 +10,7 @@ class ResourceCategoriesController < ApplicationController
   # GET /resource_categories/1
   # GET /resource_categories/1.json
   def show
+    @resources = @resource_category.resources
   end
 
   # GET /resource_categories/new
